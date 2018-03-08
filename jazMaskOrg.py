@@ -30,7 +30,9 @@ def frame(original_image, color, frame_width):
     drawing_layer.rectangle((0,0,width,thickness), fill=(255,215,0,255))
     drawing_layer.rectangle((0,0,thickness,height), fill=(255,215,0,255))
     drawing_layer.polygon(((0,0),(0,thickness*4),(thickness*4,0)), fill=(255,215,0,255))
-    PIL.ImageDraw.Draw.text(half_mid, down, 'family name' , fill=(255,215,0,255), font='none', anchor='none')
+    text= "family name"
+    drawing_layer.text((half_mid, down), text, fill=None, font=None)
+
    
     # Make the new image, starting with all transparent
     result = original_image.copy()
