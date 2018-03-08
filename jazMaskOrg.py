@@ -16,7 +16,7 @@ def frame(original_image, color, frame_width):
     thickness = int(frame_width * min(width, height)) # thickness in pixels
     thickness_1 = (-1)*int(frame_width * min(width, height))
     half_mid = int(width/4)
-    down = int(height* (7/8))
+    down = int(height* 0.95)
     ###
     #create a mask
     ###
@@ -30,8 +30,9 @@ def frame(original_image, color, frame_width):
     drawing_layer.rectangle((0,0,width,thickness), fill=(255,215,0,255))
     drawing_layer.rectangle((0,0,thickness,height), fill=(255,215,0,255))
     drawing_layer.polygon(((0,0),(0,thickness*4),(thickness*4,0)), fill=(255,215,0,255))
-    text= "family name"
+    text= "Family Name"
     drawing_layer.text((half_mid, down), text, fill=None, font=None)
+    drawing_layer.textsize(text, font=None)
 
    
     # Make the new image, starting with all transparent
